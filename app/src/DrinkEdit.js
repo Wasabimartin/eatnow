@@ -15,6 +15,7 @@ const DrinkEdit = () => {
     unit: '',
   };
 const options = [
+      { value: "cl", label: "Centiliters (cl)" },
       { value: "ml", label: "Millilitres (ml)" },
       { value: "l", label: "Liters (l)" },
     ];

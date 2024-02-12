@@ -5,8 +5,10 @@ import java.util.Map;
 
 public enum UnitEnum {
 
+    CENTILITRES("Centiliters (cl)", "cl"),
     MILLILITRES("Milliliters (ml)", "ml"),
     LITRES("Liters (l)", "l");
+
 
     public static final Map<String, UnitEnum> BY_LABEL = new HashMap<>();
     public static final Map<String, UnitEnum> BY_VALUE = new HashMap<>();
