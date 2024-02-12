@@ -1,42 +1,39 @@
 package com.eatnow.eatnow.services;
 
 import com.eatnow.eatnow.dtos.DrinkDTO;
+import com.eatnow.eatnow.dtos.DrinkDTOMapper;
 import com.eatnow.eatnow.model.Drink;
+import com.eatnow.eatnow.model.DrinkModelMapper;
 import com.eatnow.eatnow.repo.DrinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class DrinkService {
     @Autowired
     private DrinkRepository drinkRepository;
 
-    public DrinkDTO getUserById(Long drinkID) {
+    public DrinkDTO getDrinkById(Long drinkID) {
         Drink drink = drinkRepository.findById(drinkID).orElse(null);
-        return convertToDTO(drink);
+        return DrinkDTOMapper.convertToDTO(drink);
     }
 
-    public void saveUser(DrinkDTO drinkDTO) {
-        Drink drink = convertToEntity(drinkDTO);
+    public void saveDrink(DrinkDTO drinkDTO) {
+        Drink drink = DrinkModelMapper.convertToEntity(drinkDTO);
         drinkRepository.save(drink);
     }
 
-    private DrinkDTO convertToDTO(Drink drink) {
-        DrinkDTO drinkDTO = new DrinkDTO();
-        drinkDTO.setAlcohol(drink.getAlcohol());
-        drinkDTO.setSize(drink.getSize());
-        drinkDTO.setName(drink.getName());
-        drinkDTO.setUnit(drink.getUnit());
-        return null;
+    public List<DrinkDTO> findAll(){
+            List<Drink> list = drinkRepository.findAll();
+            List<DrinkDTO> dtoList = new ArrayList<>();
+            for(Drink drink : list){
+                dtoList.add(DrinkDTOMapper.convertToDTO(drink));
+            }
+            return dtoList;
     }
 
-    private Drink convertToEntity(DrinkDTO drinkDTO) {
-        Drink drink = new Drink();
-        drink.setAlcohol(drinkDTO.isAlcohol());
-        drink.setSize(drinkDTO.getSize());
-        drink.setUnit(drinkDTO.getUnit());
-        drink.setName(drinkDTO.getName());
-        return null;
-
-    }
 }
