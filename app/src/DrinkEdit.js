@@ -51,6 +51,12 @@ const DrinkEdit = () => {
       setDrink({ ...drink, [name]: value })
     };
 
+    const handleAlcohol = (event) => {
+        const { name, value, type, checked } = event.target;
+        const inputValue = type === 'checkbox' ? checked : value;
+        setDrink({ ...drink, [name]: inputValue })
+        };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -94,6 +100,13 @@ const DrinkEdit = () => {
             <Label for="unit">Unit</Label>
             <Select options={options} onChange={handleUnit} autoFocus={true} value={selected}/>
           </FormGroup>
+          <FormGroup check>
+                      <Label check>
+                        <Input type="checkbox" name="alcohol" checked={drink.alcohol}
+                               onChange={handleAlcohol} />
+                        {' '}Alcohol
+                      </Label>
+                    </FormGroup>
 
           <div className="row">
 
