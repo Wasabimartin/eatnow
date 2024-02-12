@@ -6,6 +6,9 @@ public class DrinkDTO {
         private Double size;
         private String unit;
 
+    public DrinkDTO() {
+    }
+
     public DrinkDTO(String name, boolean alcohol, Double size, String unit) {
         this.name = name;
         this.alcohol = alcohol;
