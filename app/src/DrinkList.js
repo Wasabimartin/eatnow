@@ -38,7 +38,6 @@ const DrinkList = () => {
 
   const drinkList = drinks.map(drink => {
     return <tr key={drink.id}>
-      <td style={{whiteSpace: 'nowrap'}}>{drink.id}</td>
       <td style={{whiteSpace: 'nowrap'}}>{drink.name}</td>
       <td style={{whiteSpace: 'nowrap'}}>{drink.size} {drink.unit}</td>
       <td>
@@ -61,7 +60,6 @@ const DrinkList = () => {
         <Table className="mt-4">
           <thead>
           <tr>
-            <th width="5%">ID</th>
             <th width="10%">Drink</th>
             <th width="5%">Size</th>
             <th width="10%">Actions</th>
