@@ -14,7 +14,7 @@ const DrinkEdit = () => {
     size: 0,
     unit: '',
   };
-  const options = [
+const options = [
       { value: "ml", label: "Millilitres (ml)" },
       { value: "l", label: "Liters (l)" },
     ];
@@ -22,8 +22,6 @@ const DrinkEdit = () => {
   const [drink, setDrink] = useState(initialFormState);
   const navigate = useNavigate();
   const { id } = useParams();
-
-
 
   useEffect(() => {
     if (id !== 'new') {
@@ -46,7 +44,6 @@ const DrinkEdit = () => {
   }
 
   const handleDropdown = (selectedOption) => {
-        console.log(selectedOption);
       setSelected(selectedOption);
       const name = "unit";
       const value = selectedOption.value;
@@ -109,7 +106,7 @@ const DrinkEdit = () => {
           <FormGroup>
 
             <Label for="size">Size</Label>
-            <Input type="text" name="size" id="size" value={drink.size || ''}
+            <Input type="number" name="size" id="size" value={drink.size || ''}
                    onChange={handleChange} autoComplete="size"/>
 
             </FormGroup>
@@ -118,7 +115,7 @@ const DrinkEdit = () => {
 
           <FormGroup>
             <Label for="unit">Unit</Label>
-            <Select options={options} onChange={handleDropdown} autoFocus={true} value={selected}/>
+            <Select options={options} onChange={handleDropdown} value={selected}/>
           </FormGroup>
                 </Col>
   </Row>
