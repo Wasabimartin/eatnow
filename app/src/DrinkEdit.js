@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Container, Form, FormGroup, Input, Label} from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input, Label, Row, Col} from 'reactstrap';
 import Select from "react-select";
+
 
 import AppNavbar from './AppNavbar';
 
@@ -77,37 +78,55 @@ const DrinkEdit = () => {
   const title = <h2>{drink.id ? 'Edit Drink' : 'Add Drink'}</h2>;
 
 
-
-
-
-
-
   return (<div>
       <AppNavbar/>
       <Container>
         {title}
         <Form onSubmit={handleSubmit}>
+        <Row>
+                    <Col md={6}>
           <FormGroup>
             <Label for="name">Name</Label>
             <Input type="text" name="name" id="name" value={drink.name || ''}
                    onChange={handleChange} autoComplete="name"/>
           </FormGroup>
+    </Col>
+                        <Col md={6}>
+          <FormGroup className="d-flex flex-column">
+            {/* Checkbox und Label werden untereinander angezeigt */}
+            <Label className="form-check-label" for="alcohol" id="alcohol">Alcohol</Label>
+            <Input type="checkbox" className="form-check-input" id="alcohol" name="alcohol"
+                   checked={drink.alcohol} onChange={handleCheckbox} />
+
+          </FormGroup>
+    </Col>
+
+
+  </Row>
+
+        <Row>
+                    <Col md={6}>
           <FormGroup>
+
             <Label for="size">Size</Label>
             <Input type="text" name="size" id="size" value={drink.size || ''}
                    onChange={handleChange} autoComplete="size"/>
+
             </FormGroup>
+                </Col>
+                    <Col md={6}>
+
           <FormGroup>
             <Label for="unit">Unit</Label>
             <Select options={options} onChange={handleDropdown} autoFocus={true} value={selected}/>
           </FormGroup>
-          <FormGroup check>
-                      <Label check>
-                        <Input type="checkbox" name="alcohol" checked={drink.alcohol}
-                               onChange={handleCheckbox} />
-                        {' '}Alcohol
-                      </Label>
-                    </FormGroup>
+                </Col>
+  </Row>
+
+
+
+
+
 
           <div className="row">
 
