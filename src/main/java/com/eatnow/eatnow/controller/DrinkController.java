@@ -49,6 +49,14 @@ public class DrinkController {
 
         System.out.println("Request to update group: {}");
         System.out.println(drink);
+        System.out.println(drink.getName());
+        System.out.println(drink.getAlcohol());
+        System.out.println(drink.getSize());
+        System.out.println(drink.getUnit());
+
+
+
+
         Drink result = drinkRepository.save(drink);
         return ResponseEntity.ok().body(result);
 

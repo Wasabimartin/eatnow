@@ -1,16 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input, Label} from 'reactstrap';
+import Select from "react-select";
+
 import AppNavbar from './AppNavbar';
 
 const DrinkEdit = () => {
   const initialFormState = {
     name: '',
-    id: ''
+    id: '',
+    alcohol: false,
+    size: 0,
+    unit: '',
   };
+  const options = [
+      { value: "ml", label: "Millilitres (ml)" },
+      { value: "l", label: "Liters (l)" },
+    ];
+  const [selected, setSelected] = useState(null);
   const [drink, setDrink] = useState(initialFormState);
   const navigate = useNavigate();
   const { id } = useParams();
+
+
 
   useEffect(() => {
     if (id !== 'new') {
@@ -20,11 +32,25 @@ const DrinkEdit = () => {
     }
   }, [id, setDrink]);
 
+  useEffect(() => {
+      if (drink.unit) {
+        const selectedOption = options.find(option => option.value === drink.unit);
+        setSelected(selectedOption);
+      }
+    }, [drink.unit]);
+
   const handleChange = (event) => {
     const { name, value } = event.target
-
     setDrink({ ...drink, [name]: value })
   }
+
+  const handleUnit = (selectedOption) => {
+      setSelected(selectedOption);
+      const name = "unit";
+      const value = selectedOption.value;
+      setDrink({ ...drink, [name]: value })
+    };
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -43,6 +69,12 @@ const DrinkEdit = () => {
 
   const title = <h2>{drink.id ? 'Edit Drink' : 'Add Drink'}</h2>;
 
+
+
+
+
+
+
   return (<div>
       <AppNavbar/>
       <Container>
@@ -53,7 +85,15 @@ const DrinkEdit = () => {
             <Input type="text" name="name" id="name" value={drink.name || ''}
                    onChange={handleChange} autoComplete="name"/>
           </FormGroup>
-
+          <FormGroup>
+            <Label for="size">Size</Label>
+            <Input type="text" name="size" id="size" value={drink.size || ''}
+                   onChange={handleChange} autoComplete="size"/>
+            </FormGroup>
+          <FormGroup>
+            <Label for="unit">Unit</Label>
+            <Select options={options} onChange={handleUnit} autoFocus={true} value={selected}/>
+          </FormGroup>
 
           <div className="row">
 

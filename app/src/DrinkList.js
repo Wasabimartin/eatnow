@@ -38,7 +38,9 @@ const DrinkList = () => {
 
   const drinkList = drinks.map(drink => {
     return <tr key={drink.id}>
-      <td style={{whiteSpace: 'nowrap'}}>{drink.id} - {drink.name}</td>
+      <td style={{whiteSpace: 'nowrap'}}>{drink.id}</td>
+      <td style={{whiteSpace: 'nowrap'}}>{drink.name}</td>
+      <td style={{whiteSpace: 'nowrap'}}>{drink.size} {drink.unit}</td>
       <td>
         <ButtonGroup>
           <Button size="sm" color="primary" tag={Link} to={"/drinks/" + drink.id}>Edit</Button>
@@ -55,11 +57,13 @@ const DrinkList = () => {
         <div className="float-end">
           <Button color="success" tag={Link} to="/drinks/new">Add Drink</Button>
         </div>
-        <h3>My Drinks</h3>
+        <h3>All Drinks</h3>
         <Table className="mt-4">
           <thead>
           <tr>
-            <th width="20%">Drink</th>
+            <th width="5%">ID</th>
+            <th width="10%">Drink</th>
+            <th width="5%">Size</th>
             <th width="10%">Actions</th>
           </tr>
           </thead>

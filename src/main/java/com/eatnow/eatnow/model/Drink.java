@@ -21,7 +21,14 @@ public class Drink {
     @Column(name = "name")
     private String name;
 
-    // getter, setters, contructors
+    @Column(name = "alcohol")
+    private Boolean alcohol;
+
+    @Column(name = "size")
+    private Double size;
+
+    @Column(name = "unit")
+    private String unit;
 
     public Long getId() {
         return id;
@@ -37,5 +44,29 @@ public class Drink {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Boolean getAlcohol() {
+        return alcohol;
+    }
+
+    public void setAlcohol(Boolean alcohol) {
+        this.alcohol = alcohol;
+    }
+
+    public Double getSize() {
+        return size;
+    }
+
+    public void setSize(Double size) {
+        this.size = size;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }
