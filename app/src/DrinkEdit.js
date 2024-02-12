@@ -44,14 +44,15 @@ const DrinkEdit = () => {
     setDrink({ ...drink, [name]: value })
   }
 
-  const handleUnit = (selectedOption) => {
+  const handleDropdown = (selectedOption) => {
+        console.log(selectedOption);
       setSelected(selectedOption);
       const name = "unit";
       const value = selectedOption.value;
       setDrink({ ...drink, [name]: value })
     };
 
-    const handleAlcohol = (event) => {
+    const handleCheckbox = (event) => {
         const { name, value, type, checked } = event.target;
         const inputValue = type === 'checkbox' ? checked : value;
         setDrink({ ...drink, [name]: inputValue })
@@ -98,12 +99,12 @@ const DrinkEdit = () => {
             </FormGroup>
           <FormGroup>
             <Label for="unit">Unit</Label>
-            <Select options={options} onChange={handleUnit} autoFocus={true} value={selected}/>
+            <Select options={options} onChange={handleDropdown} autoFocus={true} value={selected}/>
           </FormGroup>
           <FormGroup check>
                       <Label check>
                         <Input type="checkbox" name="alcohol" checked={drink.alcohol}
-                               onChange={handleAlcohol} />
+                               onChange={handleCheckbox} />
                         {' '}Alcohol
                       </Label>
                     </FormGroup>
