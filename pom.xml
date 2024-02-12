@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.eatnow</groupId>
-	<artifactId>eatnow</artifactId>
+	<artifactId>eatnow-react</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>eatnow</name>
 	<description>Demo project for Spring Boot</description>
