@@ -8,6 +8,8 @@ import FoodList from './FoodList';
 import FoodEdit from './FoodEdit';
 import OrderList from './OrderList';
 import OrderEdit from './OrderEdit';
+import FileList from './FileList';
+
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
         <Route path='/foods/:id' exact={true} element={<FoodEdit/>}/>
         <Route path='/orders' exact={true} element={<OrderList/>}/>
         <Route path='/orders/:id' exact={true} element={<OrderEdit/>}/>
+        <Route path='/files/all' exact={true} element={<FileList/>}/>
+
       </Routes>
     </Router>
   )
