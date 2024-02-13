@@ -63,7 +63,7 @@ const DrinkList = () => {
           <tr>
             <th width="10%">Drink</th>
             <th width="5%">Size</th>
-            <th width="5%">Price</th>
+            <th width="5%">Price (€)</th>
             <th width="10%">Actions</th>
           </tr>
           </thead>
