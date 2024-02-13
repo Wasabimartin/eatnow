@@ -1,6 +1,7 @@
 package com.eatnow.eatnow.dtos;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class DrinkDTO {
     private Long id;
@@ -10,6 +11,8 @@ public class DrinkDTO {
     private String unit;
 
     private BigDecimal price;
+
+    private List<OrderDTO> orders;
 
     public DrinkDTO() {
     }
@@ -60,5 +63,13 @@ public class DrinkDTO {
 
     public void setUnit(String unit) {
         this.unit = unit;
+    }
+
+    public List<OrderDTO> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<OrderDTO> orders) {
+        this.orders = orders;
     }
 }

@@ -4,6 +4,7 @@ import com.eatnow.eatnow.enums.UnitEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "drink")
@@ -33,6 +34,9 @@ public class Drink {
     @Column(name = "unit")
     @Enumerated(EnumType.STRING)
     private UnitEnum unit;
+
+    @ManyToMany(mappedBy = "drinks")
+    private List<Order> orders;
 
     @Column(name = "price", scale = 2)
     private BigDecimal price;
@@ -83,5 +87,13 @@ public class Drink {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 }
