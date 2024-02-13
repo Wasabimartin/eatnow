@@ -96,7 +96,7 @@ const FoodEdit = () => {
 
                        <Label for="price">Price (€)</Label>
                                           <Input type="number" name="price" id="price" value={food.price || ''}
-                                                 onChange={handleChange} autoComplete="size"/>
+                                                 onChange={handleChange} autoComplete="price"/>
 
                                           </FormGroup>
 
