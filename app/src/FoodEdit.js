@@ -78,7 +78,7 @@ const FoodEdit = () => {
                     <Col md={6}>
           <FormGroup>
             <Label for="name">Name</Label>
-            <Input type="text" name="name" id="name" value={food.name || ''}
+            <Input required type="text" name="name" id="name" value={food.name || ''}
                    onChange={handleChange} autoComplete="name"/>
           </FormGroup>
     </Col>
@@ -86,7 +86,7 @@ const FoodEdit = () => {
 
                                   <FormGroup>
                                     <Label for="category">Category</Label>
-                                    <Select options={options} onChange={handleDropdown} value={selected}/>
+                                    <Select required options={options} onChange={handleDropdown} value={selected}/>
                                   </FormGroup>
                                         </Col>
   </Row>
@@ -95,7 +95,7 @@ const FoodEdit = () => {
 <FormGroup>
 
                        <Label for="price">Price (€)</Label>
-                                          <Input type="number" name="price" id="price" value={food.price || ''}
+                                          <Input required type="number" name="price" id="price" value={food.price || ''}
                                                  onChange={handleChange} autoComplete="price"/>
 
                                           </FormGroup>

@@ -43,8 +43,8 @@ const DrinkList = () => {
             <td style={{whiteSpace: 'nowrap'}}>{drink.price}</td>
       <td>
         <ButtonGroup>
-          <Button size="sm" color="primary" tag={Link} to={"/drinks/" + drink.id}>Edit</Button>
-          <Button size="sm" color="danger" onClick={() => remove(drink.id)}>Delete</Button>
+          <Button size="m" color="primary" tag={Link} to={"/drinks/" + drink.id}>Edit</Button>
+          <Button size="m" color="danger" onClick={() => remove(drink.id)}>Delete</Button>
         </ButtonGroup>
       </td>
     </tr>

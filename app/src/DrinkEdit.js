@@ -86,7 +86,7 @@ const options = [
                     <Col md={6}>
           <FormGroup>
             <Label for="name">Name</Label>
-            <Input type="text" name="name" id="name" value={drink.name || ''}
+            <Input required type="text" name="name" id="name" value={drink.name || ''}
                    onChange={handleChange} autoComplete="name"/>
           </FormGroup>
     </Col>
@@ -108,7 +108,7 @@ const options = [
           <FormGroup>
 
             <Label for="size">Size</Label>
-            <Input type="number" name="size" id="size" value={drink.size || ''}
+            <Input required type="number" name="size" id="size" value={drink.size || ''}
                    onChange={handleChange} autoComplete="size"/>
 
             </FormGroup>
@@ -117,7 +117,7 @@ const options = [
 
           <FormGroup>
             <Label for="unit">Unit</Label>
-            <Select options={options} onChange={handleDropdown} value={selected}/>
+            <Select required options={options} onChange={handleDropdown} value={selected}/>
           </FormGroup>
                 </Col>
   </Row>
@@ -127,7 +127,7 @@ const options = [
          <FormGroup>
 
              <Label for="price">Price (€)</Label>
-                                <Input type="number" name="price" id="price" value={drink.price || ''}
+                                <Input  required type="number" name="price" id="price" value={drink.price || ''}
                                        onChange={handleChange} autoComplete="size"/>
 
                                 </FormGroup>
