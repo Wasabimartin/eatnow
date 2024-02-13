@@ -1,13 +1,15 @@
 package com.eatnow.eatnow.dtos;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class OrderDTO {
     private Long id;
 
     private BigDecimal totalprice;
 
-    private Integer quantity;
+
+    private List<DrinkDTO> drinks;
 
     public OrderDTO() {
     }
@@ -28,11 +30,13 @@ public class OrderDTO {
         this.totalprice = totalprice;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+
+
+    public List<DrinkDTO> getDrinks() {
+        return drinks;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public void setDrinks(List<DrinkDTO> drinks) {
+        this.drinks = drinks;
     }
 }
