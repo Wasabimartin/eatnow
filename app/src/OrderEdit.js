@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Button, Container, Form, FormGroup, Input, Label, Row, Col} from 'reactstrap';
-import Select from "react-select";
-
 
 import AppNavbar from './AppNavbar';
 
@@ -58,28 +56,18 @@ const OrderEdit = () => {
         <Form onSubmit={handleSubmit}>
         <Row>
                     <Col md={6}>
-          <FormGroup>
-            <Label for="id">ID</Label>
-            <Input type="text" name="id" id="id" value={order.id || ''}
-                   onChange={handleChange} autoComplete="id"/>
-          </FormGroup>
-    </Col>
-                        <Col md={6}>
-
-                                  <FormGroup>
-
-                                                         <Label for="totalprice">Total Price (€)</Label>
-                                                                            <Input type="number" name="totalprice" id="totalprice" value={order.totalprice || ''}
-                                                                                   onChange={handleChange} autoComplete="totalprice"/>
-
-                                                                            </FormGroup>
-                                        </Col>
+           <FormGroup>
+              <Label for="totalprice">Total Price (€)</Label>
+              <Input disabled type="number" name="totalprice" id="totalprice" value={order.totalprice || ''}
+                                           onChange={handleChange} autoComplete="totalprice"/>
+           </FormGroup>
+        </Col>
+        <Col md={6}>
+        </Col>
   </Row>
 <Row>
-                    <Col md={6}>
-
-
-</Col>
+        <Col md={6}>
+        </Col>
 </Row>
           <div className="row">
 

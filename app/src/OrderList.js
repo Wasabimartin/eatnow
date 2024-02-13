@@ -40,10 +40,16 @@ const OrderList = () => {
      return <tr key={order.id}>
        <td style={{whiteSpace: 'nowrap'}}>{order.id}</td>
        <td style={{whiteSpace: 'nowrap'}}>{order.totalprice}</td>
+
+
+              <td style={{whiteSpace: 'nowrap'}}>{order.drinks.map(drink => <div>{drink.name}</div>)}</td>
+                            <td style={{whiteSpace: 'nowrap'}}>{order.foods.map(food => <div>{food.name}</div>)}</td>
+
+
        <td>
          <ButtonGroup>
-           <Button size="sm" color="primary" tag={Link} to={"/orders/" + order.id}>Edit</Button>
-           <Button size="sm" color="danger" onClick={() => remove(order.id)}>Delete</Button>
+           <Button size="m" color="primary" tag={Link} to={"/orders/" + order.id}>Edit</Button>
+           <Button size="m" color="danger" onClick={() => remove(order.id)}>Delete</Button>
          </ButtonGroup>
        </td>
      </tr>
@@ -62,6 +68,9 @@ const OrderList = () => {
            <tr>
              <th width="10%">ID</th>
              <th width="10%">Total Price (€)</th>
+             <th width="10%">Drinks</th>
+                          <th width="10%">Foods</th>
+
                         <th width="10%">Actions</th>
 
            </tr>

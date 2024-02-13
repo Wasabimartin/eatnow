@@ -4,7 +4,6 @@ import AppNavbar from './AppNavbar';
 import { Link } from 'react-router-dom';
 
 const FoodList = () => {
-
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -32,46 +31,66 @@ const FoodList = () => {
     });
   }
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  const renderFoodRow = (food) => {
+    return (
+      <tr key={food.id}>
+        {renderTableCell(food.name)}
+        {renderTableCell(food.category)}
+        {renderTableCell(food.price)}
+        <td>
+          <ButtonGroup>
+            <Button size="m" color="primary" tag={Link} to={`/foods/${food.id}`}>
+              Edit
+            </Button>
+            <Button size="m" color="danger" onClick={() => remove(food.id)}>
+              Delete
+            </Button>
+          </ButtonGroup>
+        </td>
+      </tr>
+    );
+  };
 
-  const foodList = foods.map(food => {
-    return <tr key={food.id}>
-      <td style={{whiteSpace: 'nowrap'}}>{food.name}</td>
-                  <td style={{whiteSpace: 'nowrap'}}>{food.category}</td>
+  const renderTableCell = (value) => {
+    return <td style={{ whiteSpace: 'nowrap' }}>{value}</td>;
+  };
 
-            <td style={{whiteSpace: 'nowrap'}}>{food.price}</td>
-      <td>
-        <ButtonGroup>
-          <Button size="sm" color="primary" tag={Link} to={"/foods/" + food.id}>Edit</Button>
-          <Button size="sm" color="danger" onClick={() => remove(food.id)}>Delete</Button>
-        </ButtonGroup>
-      </td>
-    </tr>
-  });
+  const renderTable = (title, category) => {
+    const filteredFoods = foods.filter((food) => food.category === category);
+    const foodList = filteredFoods.map(renderFoodRow);
+
+    return (
+      <>
+        <h3>{title}</h3>
+        <Table className="mt-4">
+          <thead>
+            <tr>
+              <th width="10%">Food</th>
+              <th width="5%">Category</th>
+              <th width="5%">Price (€)</th>
+              <th width="10%">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {foodList}
+          </tbody>
+        </Table>
+      </>
+    );
+  };
 
   return (
     <div>
-      <AppNavbar/>
+      <AppNavbar />
       <Container fluid>
         <div className="float-end">
-          <Button color="success" tag={Link} to="/foods/new">Add Food</Button>
+          <Button color="success" tag={Link} to="/foods/new">
+            Add Food
+          </Button>
         </div>
-        <h3>All Food</h3>
-        <Table className="mt-4">
-          <thead>
-          <tr>
-            <th width="10%">Food</th>
-            <th width="5%">Category</th>
-            <th width="5%">Price (€)</th>
-            <th width="10%">Actions</th>
-          </tr>
-          </thead>
-          <tbody>
-          {foodList}
-          </tbody>
-        </Table>
+        {renderTable('Starters', 'Starter')}
+        {renderTable('Mains', 'Main')}
+        {renderTable('Desserts', 'Dessert')}
       </Container>
     </div>
   );
