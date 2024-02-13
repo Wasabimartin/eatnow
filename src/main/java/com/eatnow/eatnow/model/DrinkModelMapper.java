@@ -14,6 +14,7 @@ public class DrinkModelMapper {
         drink.setName(drinkDTO.getName());
         drink.setId(drinkDTO.getId());
         drink.setUnit(MapperUtils.mapUnitEnum(drinkDTO.getUnit()));
+        drink.setPrice(drinkDTO.getPrice());
         return drink;
 
     }

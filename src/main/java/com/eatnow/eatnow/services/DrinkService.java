@@ -27,16 +27,16 @@ public class DrinkService {
         drinkRepository.save(drink);
     }
 
-    public List<DrinkDTO> findAll(){
-            List<Drink> list = drinkRepository.findAll();
-            List<DrinkDTO> dtoList = new ArrayList<>();
-            for(Drink drink : list){
-                dtoList.add(DrinkDTOMapper.convertToDTO(drink));
-            }
-            return dtoList;
+    public List<DrinkDTO> findAll() {
+        List<Drink> list = drinkRepository.findAll();
+        List<DrinkDTO> dtoList = new ArrayList<>();
+        for (Drink drink : list) {
+            dtoList.add(DrinkDTOMapper.convertToDTO(drink));
+        }
+        return dtoList;
     }
 
-    public Optional<DrinkDTO> findById(Long id){
+    public Optional<DrinkDTO> findById(Long id) {
         Optional<Drink> drink = drinkRepository.findById(id);
         return drink.map(DrinkDTOMapper::convertToDTO);
     }
@@ -47,7 +47,8 @@ public class DrinkService {
         return drink;
 
     }
-    public void deleteById(Long id){
+
+    public void deleteById(Long id) {
         drinkRepository.deleteById(id);
     }
 

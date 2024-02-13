@@ -4,11 +4,11 @@ import com.eatnow.eatnow.enums.UnitEnum;
 
 public class MapperUtils {
 
-    public static Boolean mapBoolean(Boolean bool){
+    public static Boolean mapBoolean(Boolean bool) {
         return null == bool ? Boolean.FALSE : bool;
     }
 
-    public static UnitEnum mapUnitEnum(String unit){
+    public static UnitEnum mapUnitEnum(String unit) {
         return switch (unit) {
             case "ml" -> UnitEnum.MILLILITRES;
             case "l" -> UnitEnum.LITRES;
@@ -17,7 +17,7 @@ public class MapperUtils {
         };
     }
 
-    public static String mapUnit(UnitEnum unitEnum){
+    public static String mapUnit(UnitEnum unitEnum) {
         return switch (unitEnum) {
             case UnitEnum.MILLILITRES -> "ml";
             case UnitEnum.LITRES -> "l";

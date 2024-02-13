@@ -40,6 +40,7 @@ const DrinkList = () => {
     return <tr key={drink.id}>
       <td style={{whiteSpace: 'nowrap'}}>{drink.name}</td>
       <td style={{whiteSpace: 'nowrap'}}>{drink.size} {drink.unit}</td>
+            <td style={{whiteSpace: 'nowrap'}}>{drink.price}</td>
       <td>
         <ButtonGroup>
           <Button size="sm" color="primary" tag={Link} to={"/drinks/" + drink.id}>Edit</Button>
@@ -62,6 +63,7 @@ const DrinkList = () => {
           <tr>
             <th width="10%">Drink</th>
             <th width="5%">Size</th>
+            <th width="5%">Price</th>
             <th width="10%">Actions</th>
           </tr>
           </thead>

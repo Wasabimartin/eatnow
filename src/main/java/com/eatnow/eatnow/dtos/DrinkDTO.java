@@ -1,21 +1,25 @@
 package com.eatnow.eatnow.dtos;
 
+import java.math.BigDecimal;
+
 public class DrinkDTO {
-        private Long id;
-        private String name;
-        private boolean alcohol;
-        private Double size;
-        private String unit;
+    private Long id;
+    private String name;
+    private boolean alcohol;
+    private Double size;
+    private String unit;
+
+    private BigDecimal price;
 
     public DrinkDTO() {
     }
 
-    public DrinkDTO(Long id, String name, boolean alcohol, Double size, String unit) {
-        this.id = id;
-        this.name = name;
-        this.alcohol = alcohol;
-        this.size = size;
-        this.unit = unit;
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public Long getId() {

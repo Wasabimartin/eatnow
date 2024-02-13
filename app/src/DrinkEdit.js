@@ -121,9 +121,17 @@ const options = [
                 </Col>
   </Row>
 
+    <Row>
+        <Col md={6}>
+         <FormGroup>
 
+             <Label for="price">Price (€)</Label>
+                                <Input type="number" name="price" id="price" value={drink.price || ''}
+                                       onChange={handleChange} autoComplete="size"/>
 
-
+                                </FormGroup>
+        </Col>
+</Row>
 
 
           <div className="row">

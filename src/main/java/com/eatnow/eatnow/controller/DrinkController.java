@@ -40,7 +40,7 @@ public class DrinkController {
     @PostMapping("/drink")
     public ResponseEntity createDrink(@RequestBody DrinkDTO drinkDTO) throws URISyntaxException {
         System.out.println("Request to create group: {}");
-        System.out.println( drinkDTO);
+        System.out.println(drinkDTO);
 
         Drink savedDrink = drinkService.save(drinkDTO);
         System.out.println(savedDrink);

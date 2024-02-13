@@ -3,6 +3,8 @@ package com.eatnow.eatnow.model;
 import com.eatnow.eatnow.enums.UnitEnum;
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "drink")
 public class Drink {
@@ -31,6 +33,9 @@ public class Drink {
     @Column(name = "unit")
     @Enumerated(EnumType.STRING)
     private UnitEnum unit;
+
+    @Column(name = "price", scale = 2)
+    private BigDecimal price;
 
     public Long getId() {
         return id;
@@ -70,5 +75,13 @@ public class Drink {
 
     public void setUnit(UnitEnum unit) {
         this.unit = unit;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
