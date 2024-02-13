@@ -8,6 +8,8 @@ public class FoodDTO {
 
     private BigDecimal price;
 
+    private String category;
+
     public FoodDTO() {
     }
 
@@ -35,4 +37,11 @@ public class FoodDTO {
         this.name = name;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }

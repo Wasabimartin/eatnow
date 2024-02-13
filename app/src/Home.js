@@ -11,7 +11,11 @@ const Home = () => {
       <Container fluid>
         <Button color="link"><Link to="/drinks">Manage Drinks</Link></Button>
       </Container>
+      <Container fluid>
+                  <Button color="link"><Link to="/foods">Manage Food</Link></Button>
+                </Container>
     </div>
+
   );
 }
 

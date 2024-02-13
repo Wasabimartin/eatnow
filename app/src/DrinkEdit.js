@@ -13,6 +13,7 @@ const DrinkEdit = () => {
     alcohol: false,
     size: 0,
     unit: '',
+    price: 0,
   };
 const options = [
       { value: "cl", label: "Centiliters (cl)" },
