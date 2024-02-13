@@ -12,7 +12,7 @@ public class DrinkDTO {
 
     private BigDecimal price;
 
-    private List<OrderDTO> orders;
+    private String details;
 
     public DrinkDTO() {
     }
@@ -65,11 +65,11 @@ public class DrinkDTO {
         this.unit = unit;
     }
 
-    public List<OrderDTO> getOrders() {
-        return orders;
+    public String getDetails() {
+        return details;
     }
 
-    public void setOrders(List<OrderDTO> orders) {
-        this.orders = orders;
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

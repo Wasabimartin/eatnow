@@ -31,6 +31,9 @@ public class Food {
     @Enumerated(EnumType.STRING)
     private FoodCategoryEnum category;
 
+    @Column(name = "details")
+    private String details;
+
     public Long getId() {
         return id;
     }
@@ -61,5 +64,13 @@ public class Food {
 
     public void setCategory(FoodCategoryEnum category) {
         this.category = category;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

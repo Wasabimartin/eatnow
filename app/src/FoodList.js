@@ -32,9 +32,15 @@ const FoodList = () => {
   }
 
   const renderFoodRow = (food) => {
+      const foodNameWithDetails = (
+        <div>
+          <div>{food.name}</div>
+          <div style={{ fontSize: '80%', fontStyle: 'italic' }}>{food.details}</div>
+        </div>
+      );
     return (
       <tr key={food.id}>
-        {renderTableCell(food.name)}
+        {renderTableCell(foodNameWithDetails)}
         {renderTableCell(food.category)}
         {renderTableCell(food.price)}
         <td>

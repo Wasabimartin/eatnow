@@ -35,11 +35,11 @@ public class Drink {
     @Enumerated(EnumType.STRING)
     private UnitEnum unit;
 
-    @ManyToMany(mappedBy = "drinks")
-    private List<Order> orders;
-
     @Column(name = "price", scale = 2)
     private BigDecimal price;
+
+    @Column(name = "details")
+    private String details;
 
     public Long getId() {
         return id;
@@ -89,11 +89,12 @@ public class Drink {
         this.price = price;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+
+    public String getDetails() {
+        return details;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

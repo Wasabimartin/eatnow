@@ -11,6 +11,7 @@ public class FoodModelMapper {
         food.setName(foodDTO.getName());
         food.setId(foodDTO.getId());
         food.setPrice(foodDTO.getPrice());
+        food.setDetails(foodDTO.getDetails());
         food.setCategory(MapperUtils.mapFoodCategoryEnum(foodDTO.getCategory()));
         return food;
 

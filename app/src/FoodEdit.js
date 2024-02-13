@@ -12,6 +12,7 @@ const FoodEdit = () => {
     id: '',
     price: 0,
     category: '',
+    details: '',
   };
   const options = [
         { value: "Starter", label: "Starter" },
@@ -90,6 +91,18 @@ const FoodEdit = () => {
                                   </FormGroup>
                                         </Col>
   </Row>
+<Row>
+                    <Col md={12}>
+<FormGroup>
+            <Label for="details">Details</Label>
+            <Input required type="textarea" name="details" id="details" value={food.details || ''}
+                   onChange={handleChange} />
+          </FormGroup>
+
+    </Col>
+
+  </Row>
+
 <Row>
                     <Col md={6}>
 <FormGroup>
