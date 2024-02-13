@@ -6,11 +6,11 @@ import com.eatnow.eatnow.model.Drink;
 import com.eatnow.eatnow.model.DrinkModelMapper;
 import com.eatnow.eatnow.repo.DrinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DrinkService {
@@ -34,6 +34,22 @@ public class DrinkService {
                 dtoList.add(DrinkDTOMapper.convertToDTO(drink));
             }
             return dtoList;
+    }
+
+    public Optional<DrinkDTO> findById(Long id){
+        Optional<Drink> drink = drinkRepository.findById(id);
+        Optional<DrinkDTO> drinkDTO = drink.map(DrinkDTOMapper::convertToDTO);
+        return drinkDTO;
+    }
+
+    public Drink save(DrinkDTO drinkDTO) {
+        Drink drink = DrinkModelMapper.convertToEntity(drinkDTO);
+        drinkRepository.save(drink);
+        return drink;
+
+    }
+    public void deleteById(Long id){
+        drinkRepository.deleteById(id);
     }
 
 }

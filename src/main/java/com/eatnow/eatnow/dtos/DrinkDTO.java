@@ -1,6 +1,7 @@
 package com.eatnow.eatnow.dtos;
 
 public class DrinkDTO {
+        private Long id;
         private String name;
         private boolean alcohol;
         private Double size;
@@ -9,11 +10,20 @@ public class DrinkDTO {
     public DrinkDTO() {
     }
 
-    public DrinkDTO(String name, boolean alcohol, Double size, String unit) {
+    public DrinkDTO(Long id, String name, boolean alcohol, Double size, String unit) {
+        this.id = id;
         this.name = name;
         this.alcohol = alcohol;
         this.size = size;
         this.unit = unit;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
