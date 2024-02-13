@@ -38,7 +38,12 @@ const DrinkList = () => {
 
   const drinkList = drinks.map(drink => {
     return <tr key={drink.id}>
-      <td style={{whiteSpace: 'nowrap'}}>{drink.name}</td>
+      <td style={{whiteSpace: 'nowrap'}}>
+      <div>
+                <div>{drink.name}</div>
+                <div style={{ fontSize: '80%', fontStyle: 'italic' }}>{drink.details}</div>
+              </div>
+      </td>
       <td style={{whiteSpace: 'nowrap'}}>{drink.size} {drink.unit}</td>
             <td style={{whiteSpace: 'nowrap'}}>{drink.price}</td>
       <td>

@@ -10,6 +10,8 @@ public class FoodDTO {
 
     private String category;
 
+    private String details;
+
     public FoodDTO() {
     }
 
@@ -43,5 +45,13 @@ public class FoodDTO {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
     }
 }

@@ -14,6 +14,7 @@ const DrinkEdit = () => {
     size: 0,
     unit: '',
     price: 0,
+    details: '',
   };
 const options = [
       { value: "cl", label: "Centiliters (cl)" },
@@ -99,9 +100,18 @@ const options = [
 
           </FormGroup>
     </Col>
-
-
   </Row>
+  <Row>
+                      <Col md={12}>
+  <FormGroup>
+              <Label for="details">Details</Label>
+              <Input required type="textarea" name="details" id="details" value={drink.details || ''}
+                     onChange={handleChange} />
+            </FormGroup>
+
+      </Col>
+
+    </Row>
 
         <Row>
                     <Col md={6}>
