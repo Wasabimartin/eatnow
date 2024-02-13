@@ -1,5 +1,6 @@
 package com.eatnow.eatnow.model;
 
+import com.eatnow.eatnow.enums.FoodCategoryEnum;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -26,6 +27,10 @@ public class Food {
     @Column(name = "price", scale = 2)
     private BigDecimal price;
 
+    @Column(name = "category")
+    @Enumerated(EnumType.STRING)
+    private FoodCategoryEnum category;
+
     public Long getId() {
         return id;
     }
@@ -48,5 +53,13 @@ public class Food {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public FoodCategoryEnum getCategory() {
+        return category;
+    }
+
+    public void setCategory(FoodCategoryEnum category) {
+        this.category = category;
     }
 }

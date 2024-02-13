@@ -1,6 +1,7 @@
 package com.eatnow.eatnow.model;
 
 import com.eatnow.eatnow.dtos.FoodDTO;
+import com.eatnow.eatnow.utils.MapperUtils;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,6 +11,7 @@ public class FoodModelMapper {
         food.setName(foodDTO.getName());
         food.setId(foodDTO.getId());
         food.setPrice(foodDTO.getPrice());
+        food.setCategory(MapperUtils.mapFoodCategoryEnum(foodDTO.getCategory()));
         return food;
 
     }
