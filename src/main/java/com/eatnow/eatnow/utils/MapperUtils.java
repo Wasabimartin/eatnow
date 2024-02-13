@@ -29,18 +29,18 @@ public class MapperUtils {
 
     public static FoodCategoryEnum mapFoodCategoryEnum(String unit) {
         return switch (unit) {
-            case "main" -> FoodCategoryEnum.MAIN;
-            case "starter" -> FoodCategoryEnum.STARTER;
-            case "dessert" -> FoodCategoryEnum.DESSERT;
+            case "Main" -> FoodCategoryEnum.MAIN;
+            case "Starter" -> FoodCategoryEnum.STARTER;
+            case "Dessert" -> FoodCategoryEnum.DESSERT;
             case null, default -> FoodCategoryEnum.DEFAULT;
         };
     }
 
     public static String mapFoodCategory(FoodCategoryEnum unitEnum) {
         return switch (unitEnum) {
-            case FoodCategoryEnum.MAIN -> "main";
-            case FoodCategoryEnum.STARTER -> "starter";
-            case FoodCategoryEnum.DESSERT -> "dessert";
+            case FoodCategoryEnum.MAIN -> "Main";
+            case FoodCategoryEnum.STARTER -> "Starter";
+            case FoodCategoryEnum.DESSERT -> "Dessert";
             case null, default -> "";
         };
     }

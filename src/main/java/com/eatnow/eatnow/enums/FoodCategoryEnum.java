@@ -6,9 +6,9 @@ import java.util.Map;
 public enum FoodCategoryEnum {
     DEFAULT("", ""),
 
-    STARTER("Starter", "starter"),
-    MAIN("Main", "main"),
-    DESSERT("Dessert", "dessert");
+    STARTER("Starter", "Starter"),
+    MAIN("Main", "Main"),
+    DESSERT("Dessert", "Dessert");
 
 
     public static final Map<String, FoodCategoryEnum> BY_LABEL = new HashMap<>();
