@@ -11,6 +11,8 @@ public class OrderDTO {
 
     private List<DrinkDTO> drinks;
 
+    private List<FoodDTO> foods;
+
     public OrderDTO() {
     }
 
@@ -38,5 +40,13 @@ public class OrderDTO {
 
     public void setDrinks(List<DrinkDTO> drinks) {
         this.drinks = drinks;
+    }
+
+    public List<FoodDTO> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<FoodDTO> foods) {
+        this.foods = foods;
     }
 }

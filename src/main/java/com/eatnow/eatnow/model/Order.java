@@ -27,6 +27,13 @@ public class Order {
                     referencedColumnName = "id"))
     private List<Drink> drinks;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "food_order",
+            joinColumns = @JoinColumn(name = "order_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "food_id",
+                    referencedColumnName = "id"))
+    private List<Food> foods;
+
     public Long getId() {
         return id;
     }
@@ -49,5 +56,13 @@ public class Order {
 
     public void setDrinks(List<Drink> drinks) {
         this.drinks = drinks;
+    }
+
+    public List<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<Food> foods) {
+        this.foods = foods;
     }
 }
