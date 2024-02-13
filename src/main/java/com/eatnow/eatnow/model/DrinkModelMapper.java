@@ -11,9 +11,9 @@ public class DrinkModelMapper {
         Drink drink = new Drink();
         drink.setAlcohol(MapperUtils.mapBoolean(drinkDTO.isAlcohol()));
         drink.setSize(drinkDTO.getSize());
-        drink.setUnit(drinkDTO.getUnit());
         drink.setName(drinkDTO.getName());
         drink.setId(drinkDTO.getId());
+        drink.setUnit(MapperUtils.mapUnitEnum(drinkDTO.getUnit()));
         return drink;
 
     }

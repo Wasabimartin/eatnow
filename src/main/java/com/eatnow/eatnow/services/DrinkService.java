@@ -38,8 +38,7 @@ public class DrinkService {
 
     public Optional<DrinkDTO> findById(Long id){
         Optional<Drink> drink = drinkRepository.findById(id);
-        Optional<DrinkDTO> drinkDTO = drink.map(DrinkDTOMapper::convertToDTO);
-        return drinkDTO;
+        return drink.map(DrinkDTOMapper::convertToDTO);
     }
 
     public Drink save(DrinkDTO drinkDTO) {

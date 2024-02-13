@@ -12,8 +12,8 @@ public class DrinkDTOMapper {
         drinkDTO.setAlcohol(MapperUtils.mapBoolean(drink.getAlcohol()));
         drinkDTO.setSize(drink.getSize());
         drinkDTO.setName(drink.getName());
-        drinkDTO.setUnit(drink.getUnit());
         drinkDTO.setId(drink.getId());
+        drinkDTO.setUnit(MapperUtils.mapUnit(drink.getUnit()));
         return drinkDTO;
     }
 }

@@ -2,8 +2,8 @@ package com.eatnow.eatnow.controller;
 
 import com.eatnow.eatnow.dtos.DrinkDTO;
 import com.eatnow.eatnow.model.Drink;
-import com.eatnow.eatnow.repo.DrinkRepository;
 import com.eatnow.eatnow.services.DrinkService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,13 +17,11 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class DrinkController {
 
+    @Autowired
     private final DrinkService drinkService;
-    private final DrinkRepository drinkRepository;
 
-
-    public DrinkController(DrinkService drinkService, DrinkRepository drinkRepository) {
+    public DrinkController(DrinkService drinkService) {
         this.drinkService = drinkService;
-        this.drinkRepository = drinkRepository;
     }
 
     @GetMapping("/drinks")

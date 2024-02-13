@@ -1,5 +1,6 @@
 package com.eatnow.eatnow.model;
 
+import com.eatnow.eatnow.enums.UnitEnum;
 import jakarta.persistence.*;
 
 @Entity
@@ -28,7 +29,8 @@ public class Drink {
     private Double size;
 
     @Column(name = "unit")
-    private String unit;
+    @Enumerated(EnumType.STRING)
+    private UnitEnum unit;
 
     public Long getId() {
         return id;
@@ -62,11 +64,11 @@ public class Drink {
         this.size = size;
     }
 
-    public String getUnit() {
+    public UnitEnum getUnit() {
         return unit;
     }
 
-    public void setUnit(String unit) {
+    public void setUnit(UnitEnum unit) {
         this.unit = unit;
     }
 }

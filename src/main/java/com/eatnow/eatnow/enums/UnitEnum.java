@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum UnitEnum {
+    DEFAULT("", ""),
 
     CENTILITRES("Centiliters (cl)", "cl"),
     MILLILITRES("Milliliters (ml)", "ml"),
@@ -23,7 +24,7 @@ public enum UnitEnum {
     public final String label;
     public final String value;
 
-    private UnitEnum(String label, String value) {
+    UnitEnum(String label, String value) {
         this.label = label;
         this.value = value;
     }
