@@ -1,5 +1,7 @@
 package com.eatnow.eatnow.dtos;
 
+import com.eatnow.eatnow.model.File;
+
 import java.math.BigDecimal;
 
 public class FoodDTO {
@@ -11,6 +13,8 @@ public class FoodDTO {
     private String category;
 
     private String details;
+
+    private File file;
 
     public FoodDTO() {
     }
@@ -53,5 +57,13 @@ public class FoodDTO {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
     }
 }

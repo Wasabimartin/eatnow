@@ -42,6 +42,7 @@ public class FoodService {
     }
 
     public Food save(FoodDTO foodDTO) {
+        System.out.println(foodDTO.getFile());
         Food food = FoodModelMapper.convertToEntity(foodDTO);
         foodRepository.save(food);
         return food;

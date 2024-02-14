@@ -34,6 +34,7 @@ public class Order {
                     referencedColumnName = "id"))
     private List<Food> foods;
 
+
     public Long getId() {
         return id;
     }
@@ -65,4 +66,5 @@ public class Order {
     public void setFoods(List<Food> foods) {
         this.foods = foods;
     }
+
 }

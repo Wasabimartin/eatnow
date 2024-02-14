@@ -54,4 +54,5 @@ public class File {
     public void setData(byte[] data) {
         this.data = data;
     }
+
 }

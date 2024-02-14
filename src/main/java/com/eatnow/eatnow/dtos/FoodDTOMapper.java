@@ -15,6 +15,7 @@ public class FoodDTOMapper {
         foodDTO.setPrice(food.getPrice());
         foodDTO.setDetails(food.getDetails());
         foodDTO.setCategory(MapperUtils.mapFoodCategory(food.getCategory()));
+        foodDTO.setFile(food.getFile());
         return foodDTO;
     }
 }
