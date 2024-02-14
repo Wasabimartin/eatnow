@@ -1,26 +1,23 @@
-package com.eatnow.eatnow.model;
+package com.eatnow.eatnow.dtos;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-@Entity
-@Table(name = "files")
-public class File {
-    public File() {
-    }
+public class FileDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+
     private Long id;
 
-    @Column(name = "filename")
+
 
     private String fileName;
 
-    @Column(name = "filetype")
+
     private String fileType;
 
-    @Column(name = "data")
+
     private byte[] data;
 
     public Long getId() {
@@ -54,5 +51,4 @@ public class File {
     public void setData(byte[] data) {
         this.data = data;
     }
-
 }

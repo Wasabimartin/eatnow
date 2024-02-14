@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Button, Container, Form, FormGroup, Input, Label, Row, Col} from 'reactstrap';
+import { Button, Container, Form, FormGroup, Input, Label, Row, Col, FormText} from 'reactstrap';
 import Select from "react-select";
 
 
@@ -100,8 +100,7 @@ const FoodEdit = () => {
           </FormGroup>
 
     </Col>
-
-  </Row>
+</Row>
 
 <Row>
                     <Col md={6}>

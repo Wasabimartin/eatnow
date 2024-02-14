@@ -9,6 +9,7 @@ import FoodEdit from './FoodEdit';
 import OrderList from './OrderList';
 import OrderEdit from './OrderEdit';
 import FileList from './FileList';
+import FileEdit from './FileEdit';
 
 
 const App = () => {
@@ -23,7 +24,7 @@ const App = () => {
         <Route path='/orders' exact={true} element={<OrderList/>}/>
         <Route path='/orders/:id' exact={true} element={<OrderEdit/>}/>
         <Route path='/files/all' exact={true} element={<FileList/>}/>
-
+        <Route path='/files/upload/:id' exact={true} element={<FileEdit/>}/>
       </Routes>
     </Router>
   )

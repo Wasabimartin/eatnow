@@ -34,6 +34,10 @@ public class Food {
     @Column(name = "details")
     private String details;
 
+    @ManyToOne
+    @JoinColumn(name = "file_id")
+    private File file;
+
     public Long getId() {
         return id;
     }
@@ -72,5 +76,13 @@ public class Food {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void setFile(File file) {
+        this.file = file;
     }
 }
