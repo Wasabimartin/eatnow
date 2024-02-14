@@ -29,13 +29,6 @@ useEffect(() => {
     }
   }, [id, setFileData]);
 
-
-const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
-  };
-
-
   const handleChange = (event) => {
   if(event.target.name === "file"){
     setFileData({ ...fileData, "file": event.target.files[0] });
@@ -115,16 +108,10 @@ const handleFileChange = (event) => {
                   id="file"
                   onChange={handleChange}
                 />
-                              </FormGroup>
-
-              <FormGroup>
-
-                         <Button size="m" color="link" onClick={() => downloadFile(fileData.id, fileData.fileName)}>{fileData.fileName}</Button>
-
-
-
-
-              </FormGroup>
+               </FormGroup>
+                <FormGroup>
+                     <Button size="m" color="link" onClick={() => downloadFile(fileData.id, fileData.fileName)}>{fileData.fileName}</Button>
+                 </FormGroup>
             </Col>
           </Row>
           <FormGroup>

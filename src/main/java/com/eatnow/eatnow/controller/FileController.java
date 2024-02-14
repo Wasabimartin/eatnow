@@ -40,44 +40,16 @@ public class FileController {
         }
     }
 
-//    @PostMapping("/upload")
-//    public ResponseEntity<File> uploadFile(@RequestBody FileDTO fileDTO) throws IOException {
-//        System.out.println("UPLOAD");
-//        File file = new File();
-//        file.setFileType(fileDTO.getFileType());
-//        file.setFileName(fileDTO.getFileName());
-//        file.setData(fileDTO.getData());
-//        try {
-//            File uploadedFile = fileService.uploadFile(file);
-//            return ResponseEntity.ok(uploadedFile);
-//        } finally {
-//
-//        }
-//    }
-
     @PutMapping("/upload/{fileId}")
     public ResponseEntity<File> updateFile(@PathVariable Long fileId, @RequestParam("file") MultipartFile file) throws IOException {
         System.out.println("UPDATE");
         try {
             File updatedFile = fileService.updateFile(fileId, file);
             return ResponseEntity.ok(updatedFile);
-        }
-        finally {
+        } finally {
 
-            }
         }
-
-//    @PutMapping("/upload/{fileId}")
-//    public ResponseEntity<File> updateFile(@PathVariable Long fileId, @RequestBody FileDTO fileDTO) throws IOException {
-//        System.out.println("UPDATE");
-//        try {
-//            File updatedFile = fileService.updateFile(fileId, fileDTO);
-//            return ResponseEntity.ok(updatedFile);
-//        }
-//        finally {
-//
-//        }
-//    }
+    }
 
     @GetMapping("/upload/{fileId}")
     public ResponseEntity<Resource> getFile(@PathVariable Long fileId) throws IOException {

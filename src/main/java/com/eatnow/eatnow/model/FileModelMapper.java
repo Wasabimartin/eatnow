@@ -7,7 +7,6 @@ import java.io.IOException;
 public class FileModelMapper {
 
     public static File convertToEntity(MultipartFile fileDTO, Long id) throws IOException {
-//        System.out.println(fileDTO.getName());
         File file = new File();
         file.setId(id);
         file.setFileName(fileDTO.getOriginalFilename());

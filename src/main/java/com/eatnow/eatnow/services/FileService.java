@@ -25,28 +25,11 @@ public class FileService {
         return fileRepository.save(FileModelMapper.convertToEntity(file, null));
     }
 
-//    public File uploadFile(File file) throws IOException {
-//        return fileRepository.save(file);
-//    }
-
     public File updateFile(Long fileId, MultipartFile file) throws IOException {
-
         File fileEntity = FileModelMapper.convertToEntity(file, fileId);
         fileRepository.save(fileEntity);
         return fileEntity;
-//        File fileEntity = fileRepository.findById(fileId)
-//                .orElseThrow(() -> new RuntimeException("File not found"));
-//        return fileRepository.save(FileModelMapper.convertToEntity(fileEntity));
     }
-
-//    public File updateFile(Long fileId, FileDTO fileDTO) throws IOException {
-//        File fileEntity = fileRepository.findById(fileId).orElseThrow(() -> new RuntimeException("File not found"));
-//        fileEntity.setFileName(fileDTO.getFileName());
-//        fileEntity.setData(fileDTO.getData());
-//        fileEntity.setFileType(fileDTO.getFileType());
-//
-//        return fileRepository.save(fileEntity);
-//    }
 
     public void deleteFile(Long fileId) {
         fileRepository.deleteById(fileId);
