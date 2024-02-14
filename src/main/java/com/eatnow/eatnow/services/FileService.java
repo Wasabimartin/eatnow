@@ -1,6 +1,7 @@
 package com.eatnow.eatnow.services;
 
 import com.eatnow.eatnow.model.File;
+import com.eatnow.eatnow.model.FileModelMapper;
 import com.eatnow.eatnow.repo.FileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,22 +19,13 @@ public class FileService {
     private FileRepository fileRepository;
 
     public File uploadFile(MultipartFile file) throws IOException {
-        File fileEntity = new File();
-        fileEntity.setFileName(file.getOriginalFilename());
-        fileEntity.setFileType(file.getContentType());
-        fileEntity.setData(file.getBytes());
-        return fileRepository.save(fileEntity);
+        return fileRepository.save(FileModelMapper.convertToEntity(file));
     }
 
     public File updateFile(Long fileId, MultipartFile file) throws IOException {
         File fileEntity = fileRepository.findById(fileId)
                 .orElseThrow(() -> new RuntimeException("File not found"));
-
-        fileEntity.setFileName(file.getOriginalFilename());
-        fileEntity.setFileType(file.getContentType());
-        fileEntity.setData(file.getBytes());
-
-        return fileRepository.save(fileEntity);
+        return fileRepository.save(FileModelMapper.convertToEntity(file));
     }
 
     public void deleteFile(Long fileId) {
