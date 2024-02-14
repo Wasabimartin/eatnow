@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import AppNavbar from './AppNavbar';
+import { Link } from 'react-router-dom';
+
 
 const FileList = () => {
   const [files, setFiles] = useState([]);
@@ -61,6 +63,7 @@ const FileList = () => {
       <td>
         <ButtonGroup>
           <Button size="m" color="primary" onClick={() => downloadFile(file.id, file.fileName)}>Download</Button>
+          <Button size="m" color="primary" tag={Link} to={`/files/upload/${file.id}`}>Edit</Button>
           <Button size="m" color="danger" onClick={() => remove(file.id)}>Delete</Button>
         </ButtonGroup>
       </td>
@@ -70,7 +73,11 @@ const FileList = () => {
   return (
     <div>
       <AppNavbar/>
-      <Container fluid>
+      <Container fluid><div className="float-end">
+                                 <Button color="success" tag={Link} to="/files/upload/new">
+                                   Add Food
+                                 </Button>
+                               </div>
         <h3>All Files</h3>
         <Table className="mt-4">
           <thead>

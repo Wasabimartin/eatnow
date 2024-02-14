@@ -44,7 +44,7 @@ public class FoodController {
     }
 
     @PutMapping("/food/{id}")
-    public ResponseEntity updateDrink(@PathVariable Long id, @RequestBody FoodDTO foodDTO) {
+    public ResponseEntity updateFood(@PathVariable Long id, @RequestBody FoodDTO foodDTO) {
 //        System.out.println("Request to update group: {}");
         Food result = foodService.save(foodDTO);
 //        System.out.println(result);
@@ -52,7 +52,7 @@ public class FoodController {
     }
 
     @DeleteMapping("/food/{id}")
-    public ResponseEntity deleteDrink(@PathVariable Long id) {
+    public ResponseEntity deleteFood(@PathVariable Long id) {
         foodService.deleteById(id);
         return ResponseEntity.ok().build();
     }
